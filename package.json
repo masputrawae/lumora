@@ -1,5 +1,5 @@
 {
-  "name": "lumos_theme",
+  "name": "lumora",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,16 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/masputrawae/silver-fishstick.git"
+    "url": "git+https://github.com/masputrawae/lumora.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/masputrawae/silver-fishstick/issues"
+    "url": "https://github.com/masputrawae/lumora/issues"
   },
-  "homepage": "https://github.com/masputrawae/silver-fishstick#readme",
+  "homepage": "https://github.com/masputrawae/lumora#readme",
   "dependencies": {
     "@floating-ui/dom": "^1.7.2",
     "bootstrap-icons": "^1.13.1",

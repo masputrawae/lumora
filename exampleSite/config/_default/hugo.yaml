@@ -2,17 +2,17 @@
 # BASE SETTING
 #===================
 
-baseURL: https://www.example.com/        # The base URL of your site (update this when deploying)
-title: Your Name                         # The main title of your site (can be your name, brand, etc.)
+baseURL: https://www.example.com/         # The base URL of your site (update this when deploying)
+title: Your Name                          # The main title of your site (can be your name, brand, etc.)
 
-languageCode: en-US                      # Site language code for localization (affects date/time formats)
-defaultContentLanguage: en-US           # Default content language for multilingual sites
+languageCode: en                          # Site language code for localization (affects date/time formats)
+defaultContentLanguage: en                # Default content language for multilingual sites
 
-defaultContentLanguageInSubdir: false   # If true, default language will use a subdirectory (e.g., /en/)
-disableDefaultLanguageRedirect: true    # Prevent automatic redirection to default language
+defaultContentLanguageInSubdir: false     # If true, default language will use a subdirectory (e.g., /en/)
+disableDefaultLanguageRedirect: true      # Prevent automatic redirection to default language
 
-enableEmoji: true                        # Enable emoji shortcodes like :smile:
-enableGitInfo: true                      # Enable Git commit data (useful for "last updated" timestamps)
+enableEmoji: true                         # Enable emoji shortcodes like :smile:
+enableGitInfo: true                       # Enable Git commit data (useful for "last updated" timestamps)
 
 theme: lumora
 

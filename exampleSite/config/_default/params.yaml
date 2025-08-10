@@ -59,11 +59,11 @@ giscusConfig:
   dataRepoId: "XXXX"
   dataCategory: "General"
   dataCategoryId: "XXXX"
-  dataMapping: "title"                   # Maps comments to page title
-  dataStrict: 0                          # Loose matching if title not found
-  dataReactionsEnabled: 1               # Enable emoji reactions
-  dataEmitMetadata: 1                   # Send metadata to Giscus
-  dataInputPosition: "top"              # Comment input position (top or bottom)
+  dataMapping: "title"                    # Maps comments to page title
+  dataStrict: 0                           # Loose matching if title not found
+  dataReactionsEnabled: 1                 # Enable emoji reactions
+  dataEmitMetadata: 1                     # Send metadata to Giscus
+  dataInputPosition: "top"                # Comment input position (top or bottom)
 
 #===================
 # FAVICONS

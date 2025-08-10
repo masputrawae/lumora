@@ -1,8 +1,8 @@
 # Lumora
 
-[![License](https://img.shields.io/github/license/YOUR_USERNAME/lumora?style=flat-square)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/YOUR_USERNAME/lumora?style=flat-square)](https://github.com/YOUR_USERNAME/lumora/stargazers)
-[![Last Commit](https://img.shields.io/github/last-commit/YOUR_USERNAME/lumora?style=flat-square)](https://github.com/YOUR_USERNAME/lumora/commits/main)
+[![License](https://img.shields.io/github/license/masputrawae/lumora?style=flat-square)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/masputrawae/lumora?style=flat-square)](https://github.com/masputrawae/lumora/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/masputrawae/lumora?style=flat-square)](https://github.com/masputrawae/lumora/commits/main)
 
 A fast, clean, and multilingual **Hugo theme** for knowledge bases, documentation, and personal notes.  
 Designed for speed, readability, and flexibility — with modern features like instant search, link previews, and dark/light mode.
@@ -44,7 +44,7 @@ Designed for speed, readability, and flexibility — with modern features like i
 Add Lumora as a submodule to your Hugo site:
 
 ```bash
-git submodule add https://github.com/YOUR_USERNAME/lumora themes/lumora
+git submodule add https://github.com/masputrawae/lumora themes/lumora
 ````
 
 Then update your `config.yaml` or `config.toml` to use the theme:
