@@ -1,0 +1,9 @@
+{{ $level := .Level }}
+{{ $label := printf "type-h%d" $level }}
+
+<h{{ $level }} id="{{ .Anchor }}">
+  <span>{{ .Text }}</span>
+  <a href="#{{ .Anchor }}" class="anchor" aria-label="Link ke bagian {{ .Text }}">
+    {{ partial "components/icon" (dict "name" $label "class" "anchor__icon") }}
+  </a>
+</h{{ $level }}>

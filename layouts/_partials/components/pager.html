@@ -1,0 +1,24 @@
+<nav class="pager">
+  {{ $pages := .CurrentSection.Pages.ByTitle }}
+
+  {{ with $pages.Next . }}
+    <a href="{{ .RelPermalink }}" class="pager__link pager__link--prev">
+      <span class="pager__label">
+        {{ partial "components/icon" (dict "name" "chevron-double-left") }}
+        {{ T "prev" }}
+      </span>
+      <span class="pager__title">{{ .Title | default .Params.id | default "No Title" }}</span>
+    </a>
+  {{ end }}
+  
+  {{ with $pages.Prev . }}
+    <a href="{{ .RelPermalink }}" class="pager__link pager__link--next">
+      <span class="pager__label">
+        {{ T "next" }}
+        {{ partial "components/icon" (dict "name" "chevron-double-right") }}
+      </span>
+      <span class="pager__title">{{ .Title | default .Params.id | default "No Title" }}</span>
+    </a>
+  {{ end }}
+
+</nav>

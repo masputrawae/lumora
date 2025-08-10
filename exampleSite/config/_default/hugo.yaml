@@ -1,0 +1,59 @@
+#===================
+# BASE SETTING
+#===================
+
+baseURL: https://www.example.com/        # The base URL of your site (update this when deploying)
+title: Your Name                         # The main title of your site (can be your name, brand, etc.)
+
+languageCode: en-US                      # Site language code for localization (affects date/time formats)
+defaultContentLanguage: en-US           # Default content language for multilingual sites
+
+defaultContentLanguageInSubdir: false   # If true, default language will use a subdirectory (e.g., /en/)
+disableDefaultLanguageRedirect: true    # Prevent automatic redirection to default language
+
+enableEmoji: true                        # Enable emoji shortcodes like :smile:
+enableGitInfo: true                      # Enable Git commit data (useful for "last updated" timestamps)
+
+theme: lumora
+
+taxonomies:
+  tag: tags
+  category: categories
+
+#===================
+# OUTPUT SETTING
+#===================
+
+mediaType: 'application/json'           # Default media type for custom outputs (usually not changed)
+
+# ===!You don't need to change this. It's required for site search functionality.===
+outputFormats:
+  search:
+    mediaType: 'application/json'       # Format of the search data file
+    baseName: 'search'                  # File name (search.json)
+    isPlainText: true                   # Mark it as plain text
+    notAlternative: true                # Do not treat as an alternative content format
+
+  manifest:
+    mediaType            : 'application/json'
+    baseName             : 'manifest'
+    isPlainText          : true
+    notAlternative       : true
+
+outputs:
+  home:
+    - html                              # Generate HTML for the homepage
+    - rss                               # Generate RSS feed
+    - sitemap                           # Generate sitemap.xml
+    - search                            # Generate search.json for local search
+    - manifest
+
+enableRobotsTXT: true
+#===================
+# MODULES SETTING
+#===================
+
+module:
+  hugoVersion:
+    extended: true                      # Requires Hugo Extended (needed for SCSS support, etc.)
+    min: "0.148.1"                      # Minimum required Hugo version for this theme to work properly

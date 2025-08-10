@@ -1,0 +1,13 @@
+<div class="social">
+  {{ range site.Params.social }}
+    <a
+      href="{{ .url | safeURL }}"
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      class="social__link"
+    >
+      <span class="sr-only">{{ .name }}</span>
+      {{ partial "components/icon" (dict "name" .icon "class" "social__icon" ) }}
+    </a>
+  {{ end }}
+</div>

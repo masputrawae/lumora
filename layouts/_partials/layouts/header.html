@@ -1,0 +1,18 @@
+<header class="header">
+  <nav class="navbar navbar--left">
+    {{ partial "components/brand" . }}
+    <button data-dialog="searchBar" class="navbar__search-btn">
+      {{ partial "components/icon" (dict "name" "search" ) }}
+      <span>{{ T "SearchThroughSiteContent" }}</span>
+    </button>
+  </nav>
+
+  <nav class="navbar navbar--right">
+    {{ partial "components/social_media" . }}
+    {{ partial "components/theme_list" . }}
+    {{ partial "components/i18n_list" . }}
+  </nav>
+
+  {{ partial "layouts/navbar_mobile" . }}
+</header>
+{{ partial "components/search" . }}

@@ -1,0 +1,138 @@
+#===================
+# SITE PARAMS
+#===================
+
+# Author name or site owner (used in metadata and footer)
+author: John Doe
+
+# Site icon – choose either an emoji or a logo image.
+# If both are provided, the logo will take priority.
+# Recommended: use a square (1:1) ratio image to avoid distortion.
+emoji: 📚
+
+# Path to the logo file (relative to the "static" folder, no need to include "static/")
+# Example logo: static/assets/images/logo.png → use "assets/images/logo.png"
+logo: assets/images/logo.png
+
+#===================
+# PAGE SETTINGS
+#===================
+
+# Show "Edit this page" link on all content pages by default.
+# If set to false, you must enable it manually per page via front matter (`edit_page: true`)
+defaultEditPage: true
+
+# Enable Math rendering (KaTeX/LaTeX) globally for all content.
+# If false, enable it per page using `math: true` in front matter.
+defaultMath: false
+
+# Enable Giscus comments by default on all pages.
+# Can be overridden per page via front matter (`giscus: false`)
+defaultGiscus: true
+
+#===================
+# GIT INFO
+#===================
+
+# GitHub repository used for "edit page", commit history, etc.
+# Required for git-based widgets to work properly
+ghrepo: username/repo
+branch: main                     # The branch used for editing (usually 'main' or 'master')
+
+#===================
+# WIDGET TAXONOMIES
+#===================
+
+# Define which taxonomies to display in widgets like "Browse by Tag"
+displayTaxonomies:
+  - tags
+  - categories
+
+#===================
+# GISCUS CONFIGURATION
+#===================
+
+# Giscus is a GitHub-based comment system (https://giscus.app/)
+# You must configure these fields using your own repo's information
+giscusConfig:
+  dataRepo: "username/repo"
+  dataRepoId: "XXXX"
+  dataCategory: "General"
+  dataCategoryId: "XXXX"
+  dataMapping: "title"                   # Maps comments to page title
+  dataStrict: 0                          # Loose matching if title not found
+  dataReactionsEnabled: 1               # Enable emoji reactions
+  dataEmitMetadata: 1                   # Send metadata to Giscus
+  dataInputPosition: "top"              # Comment input position (top or bottom)
+
+#===================
+# FAVICONS
+#===================
+
+# List of favicons to be used in the <head> of your site
+# Save favicon files inside the "static" directory and adjust paths accordingly
+# You can add just one or multiple favicon formats and sizes
+favicons:
+  - rel: icon
+    type: image/x-icon
+    href: assets/favicons/favicon.ico
+
+  - rel: apple-touch-icon
+    type: image/png
+    size: 180x180
+    href: assets/favicons/apple-touch-icon.png
+
+  - rel: icon
+    type: image/png
+    size: 32x32
+    href: assets/favicons/favicon-32x32.png
+
+  - rel: icon
+    type: image/png
+    size: 16x16
+    href: assets/favicons/favicon-16x16.png
+
+  - rel: icon
+    type: image/png
+    size: 192x192
+    href: assets/favicons/android-chrome-192x192.png
+
+  - rel: icon
+    type: image/png
+    size: 512x512
+    href: assets/favicons/android-chrome-512x512.png
+
+#===================
+# SOCIAL LINKS
+#===================
+
+# List of social links to be shown in the header/footer
+# Icons are based on Bootstrap Icons – see https://icons.getbootstrap.com/
+social:
+  - name: Instagram
+    url: https://www.instagram.com/user/
+    icon: instagram
+
+  - name: Twitter X
+    url: https://x.com/user
+    icon: twitter-x
+
+  - name: Facebook
+    url: https://facebook.com/user
+    icon: facebook
+
+  - name: Discord
+    url: https://discord.gg/nM4EP8DJFZ
+    icon: discord
+
+  - name: GitHub
+    url: https://github.com/user/
+    icon: github
+
+#===================
+# THEME CREDIT (OPTIONAL)
+#===================
+
+# Optional footer credit – feel free to remove this if you want.
+# Keeping it is appreciated, but not required.
+themeCredit: Theme by Putra Jaya

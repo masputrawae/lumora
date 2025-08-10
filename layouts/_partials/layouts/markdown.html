@@ -1,0 +1,47 @@
+{{/* Inisialisasi konten dan placeholder */}}
+{{ $content := .RawContent }}
+{{ $placeholders := slice }}
+{{ $i := 0 }}
+
+{{/* ------------------------------------ */}}
+{{/* 1. Masking inline code yang berisi [[...]] atau ![[...]] */}}
+{{ $inlineMatches := findRE "`!?\\[\\[[^\\[\\]]+\\]\\]`" $content }}
+{{ range $inlineMatches }}
+  {{ $placeholder := printf "WIKILINK_PLACEHOLDER_%d" $i }}
+  {{ $placeholders = $placeholders | append (dict "original" . "placeholder" $placeholder) }}
+  {{ $content = replace $content . $placeholder }}
+  {{ $i = add $i 1 }}
+{{ end }}
+
+{{/* ------------------------------------ */}}
+{{/* 2. Masking semua code block yang berisi [[...]] atau ![[...]] */}}
+{{ $codeBlockMatches := findRE "(?s)```.*?```" $content }}
+{{ range $codeBlockMatches }}
+  {{ if or (findRE "\\[\\[.*?\\]\\]" .) (findRE "!\\[\\[.*?\\]\\]" .) }}
+    {{ $placeholder := printf "WIKILINK_PLACEHOLDER_%d" $i }}
+    {{ $placeholders = $placeholders | append (dict "original" . "placeholder" $placeholder) }}
+    {{ $content = replace $content . $placeholder }}
+    {{ $i = add $i 1 }}
+  {{ end }}
+{{ end }}
+
+{{/* ------------------------------------ */}}
+{{/* 3. Konversi Wikilink Gambar terlebih dahulu */}}
+{{ $content = replaceRE `!\[\[([^\|\]]+)\|([^\|\]]+)\|([^\]]+)\]\]` `![$2|$3](imageWikiLink "$1")` $content }}
+{{ $content = replaceRE `!\[\[([^\|\]]+)\|([^\]]+)\]\]`         `![$2](imageWikiLink "$1")` $content }}
+{{ $content = replaceRE `!\[\[([^\]]+)\]\]`                     `![$1](imageWikiLink "$1")` $content }}
+
+{{/* 4. Konversi Wikilink Biasa ke Markdown Link */}}
+{{ $content = replaceRE `\[\[(https?://[^\|\]]+)\|([^\]]+)\]\]` `[$2]($1)` $content }}
+{{ $content = replaceRE `\[\[(https?://[^\]]+)\]\]`             `[$1]($1)` $content }}
+{{ $content = replaceRE `\[\[([^\|\]]+)\|([^\]]+)\]\]`          `[$2](wikilink "$1")` $content }}
+{{ $content = replaceRE `\[\[([^\]]+)\]\]`                      `[$1](wikilink "$1")` $content }}
+
+{{/* ------------------------------------ */}}
+{{/* 5. Kembalikan semua Placeholder ke Aslinya */}}
+{{ range $placeholders }}
+  {{ $content = replace $content .placeholder .original }}
+{{ end }}
+
+{{/* 6. Render hasil akhir */}}
+{{ .RenderString $content }}

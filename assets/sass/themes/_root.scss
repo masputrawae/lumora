@@ -1,0 +1,81 @@
+@use '../abstracts/mixins' as m;
+@use './dark' as d;
+@use './light' as l;
+
+:root {
+  --cl-black: #000;
+  --cl-white: #fff;
+
+  &[data-theme=light]{
+    @include m.theme-vars(l.$light);
+
+    // SYNTAX HIGHLIGHT TOKEN LIGHT
+    --bg: var(--second-bg);
+    --fg: #1f2328;
+    --err: #82071e;
+    --err-fg: #f6f8fa;
+    --hl: #e5e5e5;
+    --ln: #7f7f7f;
+    --lnt: #7f7f7f;
+    --k: #cf222e;
+    --kc: #cf222e;
+    --nc: #1f2328;
+    --no: #0550ae;
+    --nd: #0550ae;
+    --ni: #6639ba;
+    --nl: #900;
+    --nn: #24292e;
+    --nx: #1f2328;
+    --nt: #0550ae;
+    --nb: #6639ba;
+    --bp: #6a737d;
+    --nv: #953800;
+    --nf: #6639ba;
+    --l: #0a3069;
+    --sa: #0a3069;
+    --o: #0550ae;
+    --c: #57606a;
+    --gd-bg: #ffebe9;
+    --gd: #82071e;
+    --gi-bg: #dafbe1;
+    --gi: #116329;
+    --go: #1f2328;
+    --w: #fff;
+  }
+
+  &[data-theme=dark]{
+    @include m.theme-vars(d.$dark);
+
+    // SYNTAX HIGHLIGHT TOKEN DARK
+    --bg: var(--second-bg);
+    --fg: #e6edf3;
+    --err: #f85149;
+    --hl: #6e7681;
+    --ln: #6e7681;
+    --lnt: #737679;
+    --k: #ff7b72;
+    --kc: #79c0ff;
+    --nc: #f0883e;
+    --no: #79c0ff;
+    --nd: #d2a8ff;
+    --ni: #ffa657;
+    --ne: #f0883e;
+    --nl: #79c0ff;
+    --nn: #ff7b72;
+    --py: #79c0ff;
+    --nt: #7ee787;
+    --nv: #79c0ff;
+    --nf: #d2a8ff;
+    --l: #a5d6ff;
+    --s: #a5d6ff;
+    --sa: #79c0ff;
+    --o: #ff7b72;
+    --c: #8b949e;
+    --gd-bg: #490202;
+    --gd: #ffa198;
+    --gi-bg: #0f5323;
+    --gi: #56d364;
+    --go: #8b949e;
+    --w: #6e7681;
+  }
+}

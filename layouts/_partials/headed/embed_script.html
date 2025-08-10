@@ -1,0 +1,16 @@
+<script>
+  (function () {
+    try {
+      const theme = sessionStorage.getItem("APP_THEME");
+      const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const resolved = theme === "auto" || !theme
+        ? (systemPrefersDark ? "dark" : "light")
+        : theme;
+
+      document.documentElement.dataset.theme = resolved;
+    } catch (e) {
+      document.documentElement.dataset.theme = "light";
+    }
+  })();
+</script>
+

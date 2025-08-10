@@ -1,0 +1,44 @@
+translations: Translations
+switchTheme: Switch Theme
+dark: Dark
+light: Light
+auto: Auto
+SearchThroughSiteContent: Search through site content
+closeSearchBar: Close Search Bar
+search: Search
+openRightSide: Open Right Sidebar
+openLeftSide: Open Left Sidebar
+next: Next
+prev: Previous
+AllRightsReserved: All rights reserved.
+BuiltWithHugo: Built with Hugo
+copy: 📋 Copy
+copied: ✅ Copied
+searchCurrentlyUnavailable: Search is currently unavailable
+noResultsFoundFor: No results found for
+logo: Logo
+onThisPage: On This Page
+history: History
+editThisPage: Edit This Page
+
+# Callout
+tip: Tip
+info: Info
+success: Success
+warning: Warning
+danger: Danger
+error: Error
+bug: Bug
+note: Note
+abstract: Abstract
+todo: To-Do
+question: Question
+failure: Failure
+example: Example
+quote: Quote
+important: Important
+journal: Journal
+date: Date
+book: Book
+person: Person
+code: Code

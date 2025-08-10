@@ -1,0 +1,44 @@
+translations: 翻訳
+switchTheme: テーマを切り替える
+dark: ダーク
+light: ライト
+auto: 自動
+SearchThroughSiteContent: サイトのコンテンツを検索
+closeSearchBar: 検索バーを閉じる
+search: 検索
+openRightSide: 右サイドバーを開く
+openLeftSide: 左サイドバーを開く
+next: 次へ
+prev: 前へ
+AllRightsReserved: 全著作権所有。
+BuiltWithHugo: Hugoで構築
+copy: 📋 コピー
+copied: ✅ コピー済み
+searchCurrentlyUnavailable: 現在、検索は利用できません
+noResultsFoundFor: 次の検索結果は見つかりませんでした：
+logo: ロゴ
+onThisPage: このページ内
+history: 履歴
+editThisPage: このページを編集
+
+# Callout
+tip: ヒント
+info: 情報
+success: 成功
+warning: 警告
+danger: 危険
+error: エラー
+bug: バグ
+note: メモ
+abstract: 要約
+todo: やること
+question: 質問
+failure: 失敗
+example: 例
+quote: 引用
+important: 重要
+journal: ジャーナル
+date: 日付
+book: 本
+person: 人物
+code: コード

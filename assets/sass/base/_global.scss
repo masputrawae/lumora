@@ -1,0 +1,82 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/breakpoints" as b;
+
+html {
+  @include m.custom-scrollbar(var(--base-border), var(--primary));
+  font-size: v.$fs-base;
+  font-family: v.$font-sans;
+  background-color: var(--base-bg);
+  color: var(--base-color);
+  font-weight: 400;
+}
+
+button {
+  cursor: pointer;
+}
+
+// SEMENTARA
+.btn {
+  padding: 0.25rem 0.75rem;
+  text-decoration: none;
+  background-color: var(--second-bg);
+  border: 1px solid var(--base-border);
+  border-radius: 0.25rem;
+  box-shadow: var(--base-shadow);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--second-color);
+}
+
+.icon {
+  @include m.size(v.$fs-base);
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: middle;
+}
+
+.sr-only {
+  @include m.visually-hidden();
+}
+
+.social {
+  @include m.flex-justify(center, center);
+  gap: 1rem;
+  margin-block: 2rem;
+
+  &__icon {
+    @include m.size(v.$fs-6xl);
+    color: var(--primary-text-emphasis);
+
+    &:hover {
+      color: var(--second-color);
+    }
+  }
+}
+
+.language,
+.theme {
+  @include m.flex-justify(center, center);
+
+  &__icon {
+    @include m.size(v.$fs-5xl);
+  }
+
+  &__select {
+    padding: 0.5rem 1rem;
+    background-color: var(--second-bg);
+    color: var(--base-color);
+    outline: none;
+  }
+
+  &:hover {
+    .language,
+    .theme {
+      &__icon,
+      &__select {
+        color: var(--primary);
+      }
+    }
+  }
+}

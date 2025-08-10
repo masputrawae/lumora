@@ -1,0 +1,23 @@
+{{- define "main" }}
+<h1>😵 404 – Page Not Found</h1>
+
+<p>
+  Looks like you took a wrong turn somewhere on the internet highway.<br />
+  Don’t worry, it happens to the best of us.
+</p>
+
+<div>
+  <a
+    href="{{ site.BaseURL | relURL }}"
+    style="
+      padding: 0.75rem 1.5rem;
+      background: #0077cc;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    "
+  >
+    ⬅️ Go Back Home
+  </a>
+</div>
+{{- end }}

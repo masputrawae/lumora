@@ -1,0 +1,26 @@
+{
+  "name": "{{- site.Title -}}",
+  "short_name": "{{- site.Title -}}",
+  "icons": [
+    {{- $favicons := slice -}}
+    {{- range site.Params.favicons -}}
+      {{- if not (hasSuffix .href ".ico") -}}
+        {{- $src := .href | absURL -}}
+        {{- $sizes := cond (isset . "size") .size "any" -}}
+        {{- $type := cond (isset . "type") .type "image/png" -}}
+
+        {{- $favicon := printf `{
+          "src": "%s",
+          "sizes": "%s",
+          "type": "%s"
+        }` $src $sizes $type -}}
+
+        {{- $favicons = $favicons | append $favicon -}}
+      {{- end -}}
+    {{- end -}}
+    {{- delimit $favicons ",\n    " -}}
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

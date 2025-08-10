@@ -1,0 +1,44 @@
+translations: 翻译
+switchTheme: 切换主题
+dark: 深色
+light: 浅色
+auto: 自动
+SearchThroughSiteContent: 搜索网站内容
+closeSearchBar: 关闭搜索栏
+search: 搜索
+openRightSide: 打开右侧边栏
+openLeftSide: 打开左侧边栏
+next: 下一页
+prev: 上一页
+AllRightsReserved: 保留所有权利。
+BuiltWithHugo: 使用 Hugo 构建
+copy: 📋 复制
+copied: ✅ 已复制
+searchCurrentlyUnavailable: 当前无法搜索
+noResultsFoundFor: 未找到与以下内容匹配的结果：
+logo: 标志
+onThisPage: 本页内容
+history: 历史
+editThisPage: 编辑此页面
+
+# Callout
+tip: 提示
+info: 信息
+success: 成功
+warning: 警告
+danger: 危险
+error: 错误
+bug: 缺陷
+note: 注释
+abstract: 摘要
+todo: 待办事项
+question: 问题
+failure: 失败
+example: 示例
+quote: 引用
+important: 重要
+journal: 日志
+date: 日期
+book: 书籍
+person: 人物
+code: 代码

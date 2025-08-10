@@ -1,0 +1,44 @@
+translations: Terjemahan
+switchTheme: Ganti Tema
+dark: Peteng
+light: Padhang
+auto: Otomatis
+SearchThroughSiteContent: Telusuri isi situs
+closeSearchBar: Tutup bilah panel telusur
+search: Telusur
+openRightSide: Bukak panel sisih tengen
+openLeftSide: Bukak panel sisih kiwa
+next: Sabanjure
+prev: Sakdurunge
+AllRightsReserved: Kabeh hak dilindhungi.
+BuiltWithHugo: Dibangun nganggo Hugo
+copy: 📋 Salin
+copied: ✅ Wis kasalin
+searchCurrentlyUnavailable: Panel telusur saiki ora kasedhiya
+noResultsFoundFor: Ora ana asil kanggo
+logo: Logo
+onThisPage: Ing kaca iki
+history: Riwayat
+editThisPage: Sunting kaca iki
+
+# Callout
+tip: Tips
+info: Informasi
+success: Sukses
+warning: Pèngetan
+danger: Bebaya
+error: Kaluputan
+bug: Bug
+note: Cathetan
+abstract: Ringkesan
+todo: Kanggo Ditindak
+question: Pitakon
+failure: Gagal
+example: Tuladha
+quote: Kutipan
+important: Penting
+journal: Jurnal
+date: Tanggal
+book: Buku
+person: Wong
+code: Kode

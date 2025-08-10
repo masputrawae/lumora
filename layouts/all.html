@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <h1>{{ .Title | title | default .Params.id | default "No Title" }}</h1>
+  {{ partial "layouts/markdown" . }}
+  {{ if in (slice "section" "taxonomy" "term") .Kind }}
+    <ul class="multi-column-list">
+      {{ range .Pages }}
+        <li class="multi-column-list__item">
+          <a href="{{ .RelPermalink }}">{{ .LinkTitle | default .Params.id | default "No Title" }}</a>
+        </li>
+      {{ end }}
+    </ul>
+  {{ else }}
+    {{ if .Params.edit_page | default site.Params.defaultEditPage | default false }}
+      {{ partial "components/edit_page" . }}
+    {{ end }}
+    {{ partial "components/pager" . }}
+  {{ end }}
+{{ end }}

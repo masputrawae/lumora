@@ -1,0 +1,40 @@
+<footer class="footer">
+  {{ if .Params.giscus | default site.Params.defaultGiscus | default true }}
+    {{ partial "components/giscus" . }}
+  {{ end }}
+  
+  <div class="copyright">
+    <p class="copyright__site">
+      &copy; {{ site.Title }} · {{ now.Year }} | {{ T "AllRightsReserved" }}
+    </p>
+  </div>
+</footer>
+
+{{- if .Store.Get "hasMermaid" }}
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+{{- end }}
+
+{{- if .Params.math | default site.Params.defaultMath | default false }}
+  <script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"
+  ></script>
+  <script>
+    MathJax = {
+      tex: {
+        displayMath: [
+          ["\\[", "\\]"],
+          ["$$", "$$"],
+        ], // block
+        inlineMath: [["\\(", "\\)"]], // inline
+      },
+      loader: {
+        load: ["ui/safe"],
+      },
+    };
+  </script>
+{{- end }}

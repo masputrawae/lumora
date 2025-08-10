@@ -1,0 +1,72 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/breakpoints" as b;
+
+@include b.min(md) {
+  .layout {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "sidebarLeft content content"
+      "sidebarLeft footer footer";
+
+    grid-template-columns: 20rem minmax(0, 1fr);
+    grid-template-rows: repeat(3, auto);
+  }
+
+  .header {
+    justify-content: space-between;
+    grid-area: header;
+    height: 5rem;
+  }
+
+  .navbar--mobile {
+    position: relative;
+    justify-content: end;
+    gap: 1rem;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    [data-sidebar="sidebarLeft"] {
+      display: none;
+    }
+  }
+
+  .sidebar {
+    width: 20rem;
+    inset-block-start: 5rem;
+    padding-block-end: 8rem;
+
+    &--left {
+      grid-area: sidebarLeft;
+      visibility: visible;
+      transform: translateX(0%);
+    }
+  }
+
+  .main {
+    padding-inline: 1.5rem;
+    grid-area: content;
+  }
+
+  .footer {
+    grid-area: footer;
+    padding: 1rem 1rem;
+  }
+
+  #linkpreview {
+    display: none;
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    width: 400px;
+    max-height: 400px;
+    overflow: scroll;
+    z-index: 999999999;
+    border: 1px solid var(--base-border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: var(--base-shadow);
+    background-color: var(--second-bg);
+  }
+}

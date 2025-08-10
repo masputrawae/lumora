@@ -1,0 +1,44 @@
+translations: Traductions
+switchTheme: Changer le thème
+dark: Sombre
+light: Clair
+auto: Automatique
+SearchThroughSiteContent: Rechercher dans le contenu du site
+closeSearchBar: Fermer la barre de recherche
+search: Recherche
+openRightSide: Ouvrir la barre latérale droite
+openLeftSide: Ouvrir la barre latérale gauche
+next: Suivant
+prev: Précédent
+AllRightsReserved: Tous droits réservés.
+BuiltWithHugo: Construit avec Hugo
+copy: 📋 Copier
+copied: ✅ Copié
+searchCurrentlyUnavailable: La recherche est actuellement indisponible
+noResultsFoundFor: Aucun résultat trouvé pour
+logo: Logo
+onThisPage: Sur cette page
+history: Historique
+editThisPage: Modifier cette page
+
+# Callout
+tip: Astuce
+info: Info
+success: Succès
+warning: Avertissement
+danger: Danger
+error: Erreur
+bug: Bug
+note: Note
+abstract: Résumé
+todo: À faire
+question: Question
+failure: Échec
+example: Exemple
+quote: Citation
+important: Important
+journal: Journal
+date: Date
+book: Livre
+person: Personne
+code: Code

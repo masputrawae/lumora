@@ -1,0 +1,44 @@
+translations: الترجمات
+switchTheme: تغيير النمط
+dark: داكن
+light: فاتح
+auto: تلقائي
+SearchThroughSiteContent: البحث في محتوى الموقع
+closeSearchBar: إغلاق شريط البحث
+search: بحث
+openRightSide: فتح الشريط الجانبي الأيمن
+openLeftSide: فتح الشريط الجانبي الأيسر
+next: التالي
+prev: السابق
+AllRightsReserved: جميع الحقوق محفوظة.
+BuiltWithHugo: تم الإنشاء بواسطة Hugo
+copy: 📋 نسخ
+copied: ✅ تم النسخ
+searchCurrentlyUnavailable: البحث غير متاح حالياً
+noResultsFoundFor: لم يتم العثور على نتائج لـ
+logo: الشعار
+onThisPage: في هذه الصفحة
+history: التاريخ
+editThisPage: تعديل هذه الصفحة
+
+# Callout
+tip: نصيحة
+info: معلومات
+success: نجاح
+warning: تحذير
+danger: خطر
+error: خطأ
+bug: خلل
+note: ملاحظة
+abstract: ملخص
+todo: المهام
+question: سؤال
+failure: فشل
+example: مثال
+quote: اقتباس
+important: مهم
+journal: مجلة
+date: التاريخ
+book: كتاب
+person: شخص
+code: كود

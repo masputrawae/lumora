@@ -1,0 +1,25 @@
+{{- if .IsTranslated }}
+  <label class="language">
+
+    <span class="sr-only">{{ T "translations" }}</span>
+    {{- partial "components/icon" (dict "name" "translate" "class" "language__icon") }}
+    
+    <select name="lang-select" class="language__select">
+
+      <option value="{{- .RelPermalink }}" selected>
+        {{- .Language.LanguageName }}
+      </option>
+      
+      {{- range .Translations }}
+        <option
+          value="{{- .RelPermalink }}"
+          {{- if eq .Language.Lang $.Site.Language.Lang }}selected{{- end }}
+        >
+          {{- .Language.LanguageName }}
+        </option>
+      {{- end }}
+    
+    </select>
+  
+  </label>
+{{- end }}

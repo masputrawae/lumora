@@ -1,0 +1,30 @@
+{{ with .GitInfo }}
+  <div class="widget">
+    <strong class="widget__title">{{ T "history" }}</strong>
+    <nav class="git-history">
+      <ul class="git-history__list">
+        {{ $allCommits := slice . | append .Ancestors }}
+        {{ $filePath := $.Page.File.Path }}
+        {{ if hugo.IsMultilingual }}
+          {{ $filePath = printf "%s/%s" $.Page.Lang $filePath }}
+        {{ end }}
+
+        {{ range $allCommits }}
+          <li class="git-history__item">
+            <a
+              href="https://github.com/{{ site.Params.ghrepo }}/blob/{{ .Hash }}/content/{{ $filePath }}"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="git-history__link"
+            >
+              <span class="git-history__date">
+                {{ .CommitDate.Format "2006-01-02" }}
+              </span>
+              <span class="git-history__subject">{{ .Subject }}</span>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+{{ end }}

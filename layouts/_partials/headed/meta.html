@@ -1,0 +1,50 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title | default .Params.id | default "No Title" }} | {{ site.Title }}{{ end }}</title>
+
+{{- range site.Params.favicons -}}
+  <link
+    rel="{{- .rel -}}"
+    {{- with .type -}}type="{{- . -}}"{{- end -}}
+    {{- with .size -}}sizes="{{- . -}}"{{- end -}}
+    href="{{- .href | absURL -}}"
+  />
+{{- end -}}
+
+{{- if .IsTranslated -}}
+  <link
+    rel="alternate"
+    hreflang="{{- site.Language.Lang -}}"
+    href="{{- .Permalink -}}"
+  />
+{{- end -}}
+
+<link rel="manifest" href="{{- "manifest.json" | absURL -}}" />
+<link rel="sitemap" type="application/xml" href="{{- "sitemap.xml" | absURL -}}"/>
+{{- $description := "" -}}
+{{- if .Params.description -}}
+  {{- $description = .Params.description | plainify | htmlEscape -}}
+{{- else -}}
+  {{- $description = .Summary | plainify | truncate 160 | htmlEscape -}}
+{{- end -}}
+
+<link rel="canonical" href="{{- .Permalink -}}" />
+<meta name="robots" content="index, follow" />
+<meta name="description" content="{{- $description -}}" />
+<meta name="author" content="{{- .Params.author | default site.Params.author -}}"/>
+<meta name="twitter:site" content="{{- .Params.twitter | default site.Params.twitter -}}"/>
+{{- if .Params.tags -}}
+  <meta
+    name="keywords"
+    content="{{- with .Params.tags -}}
+      {{- delimit . ", " -}}
+    {{- else -}}
+      {{- $.Site.Params.keywords -}}
+    {{- end -}}"
+  />
+{{- end -}}
+
+{{- partial "google_analytics.html" . -}}
+{{- partial "opengraph.html" . -}}
+{{- partial "schema.html" . -}}
+{{- partial "twitter_cards.html" . -}}

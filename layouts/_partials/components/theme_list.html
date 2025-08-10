@@ -1,0 +1,9 @@
+<label class="theme">
+  <span class="sr-only">{{ T "switchTheme" }}</span>
+  {{ partial "components/icon" (dict "name" "pc-display" "class" "icon--theme theme__icon") }}
+  <select name="select-theme" class="theme__select">
+    <option value="auto">{{ T "auto" }}</option>
+    <option value="dark">{{ T "dark" }}</option>
+    <option value="light">{{ T "light" }}</option>
+  </select>
+</label>

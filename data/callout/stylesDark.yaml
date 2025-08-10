@@ -1,0 +1,109 @@
+tip:
+  bg: "#16653420"
+  border: "#052e16"
+  color: "#86efac"
+
+info:
+  bg: "#1e40af20"
+  border: "#172554"
+  color: "#60a5fa"
+
+success:
+  bg: "#16653420"
+  border: "#052e16" 
+  color: "#4ade80"
+
+warning:
+  bg: "#92400e20"
+  border: "#451a03"
+  color: "#fbbf24"
+
+danger:
+  bg: "#991b1b20"
+  border: "#450a0a"
+  color: "#f87171"
+
+error:
+  bg: "#991b1b20"
+  border: "#450a0a"
+  color: "#fca5a5"
+
+bug:
+  bg: "#6b21a820"
+  border: "#3b0764"
+  color: "#c084fc"
+
+note:
+  bg: "#0e749020"
+  border: "#083344"
+  color: "#22d3ee"
+
+abstract:
+  bg: "#9d174d20"
+  border: "#500724"
+  color: "#f472b6"
+
+todo:
+  bg: "#0f766e20"
+  border: "#042f2e"
+  color: "#2dd4bf"
+
+question:
+  bg: "#0369a120"
+  border: "#082f49"
+  color: "#38bdf8"
+
+failure:
+  bg: "#47556920"
+  border: "#020617"
+  color: "#94a3b8"
+
+example:
+  bg: "#86198f20"
+  border: "#4a044e"
+  color: "#e879f9"
+
+quote:
+  bg: "#44403c20"
+  border: "#1c1917"
+  color: "#a8a29e"
+
+important:
+  bg: "#854d0e20" 
+  border: "#422006"
+  color: "#facc15"
+
+history:
+  bg: "#9a341220"
+  border: "#431407"
+  color: "#fb923c"
+
+journal:
+  bg: "#3f621220"
+  border: "#1a2e05"
+  color: "#a3e635"
+
+date:
+  bg: "#04785720"
+  border: "#022c22"
+  color: "#34d399"
+
+book:
+  bg: "#5b21b620"
+  border: "#2e1065"
+  color: "#a78bfa"
+
+search:
+  bg: "#3730a320"
+  border: "#1e1b4b"
+  color: "#818cf8"
+
+person:
+  bg: "#9f123920"
+  border: "#4c0519"
+  color: "#fb7185"
+
+code:
+  bg: "#1e293b20"
+  border: "#020617"
+  color: "#7dd3fc"

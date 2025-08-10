@@ -1,0 +1,44 @@
+translations: Terjemahan
+switchTheme: Ubah Tema
+dark: Gelap
+light: Terang
+auto: Otomatis
+SearchThroughSiteContent: Telusuri konten situs
+closeSearchBar: Tutup Bilah Pencarian
+search: Pencarian
+openRightSide: Buka Bilah Sisi Kanan
+openLeftSide: Buka Bilah Sisi Kiri
+next: Berikutnya
+prev: Sebelumnya
+AllRightsReserved: Semua hak dilindungi.
+BuiltWithHugo: Dibangun Dengan Hugo
+copy: 📋 Salin
+copied: ✅ Tersalin
+searchCurrentlyUnavailable: Pencarian saat ini tidak tersedia
+noResultsFoundFor: Tidak ada hasil yang ditemukan untuk
+logo: Logo
+onThisPage: Di Halaman Ini
+history: Sejarah
+editThisPage: Edit Halaman
+
+# Callout
+tip: Tip
+info: Info
+success: Sukses
+warning: Peringatan
+danger: Bahaya
+error: Error
+bug: Bug
+note: Catatan
+abstract: Abstrak
+todo: Yang Harus Diselesaikan
+question: Pertanyaan
+failure: Kegagalan
+example: Contoh
+quote: Kutipan
+important: Penting
+journal: Jurnal
+date: Tanggal
+book: Buku
+person: Orang
+code: Kode

@@ -1,0 +1,44 @@
+translations: Übersetzungen
+switchTheme: Design wechseln
+dark: Dunkel
+light: Hell
+auto: Automatisch
+SearchThroughSiteContent: Website-Inhalte durchsuchen
+closeSearchBar: Suchleiste schließen
+search: Suche
+openRightSide: Rechte Seitenleiste öffnen
+openLeftSide: Linke Seitenleiste öffnen
+next: Weiter
+prev: Zurück
+AllRightsReserved: Alle Rechte vorbehalten.
+BuiltWithHugo: Erstellt mit Hugo
+copy: 📋 Kopieren
+copied: ✅ Kopiert
+searchCurrentlyUnavailable: Die Suche ist derzeit nicht verfügbar
+noResultsFoundFor: Keine Ergebnisse gefunden für
+logo: Logo
+onThisPage: Auf dieser Seite
+history: Verlauf
+editThisPage: Diese Seite bearbeiten
+
+# Callout
+tip: Tipp
+info: Info
+success: Erfolg
+warning: Warnung
+danger: Gefahr
+error: Fehler
+bug: Fehler (Bug)
+note: Notiz
+abstract: Zusammenfassung
+todo: Zu erledigen
+question: Frage
+failure: Fehlschlag
+example: Beispiel
+quote: Zitat
+important: Wichtig
+journal: Journal
+date: Datum
+book: Buch
+person: Person
+code: Code

@@ -1,0 +1,90 @@
+#===================
+# ENGLISH
+#===================
+
+# Example of multilingual configuration.
+# For single-language setup, see the full theme documentation: https://lumos_themes.github.io/
+en:
+  languageCode: en-US                     # Language locale for English
+  contentDir: content/en                 # Directory where English content is stored
+  languageName: English                  # Display name of the language
+  weight: 1                              # Used to sort languages in language switcher
+  timeZone: UTC                          # Time zone used for English content
+
+  params:
+    # Language setting for Giscus comments (https://giscus.app/)
+    # Leave blank to fallback to the site language, but make sure the language is supported by Giscus
+    giscusLang: en
+
+  menus:
+    # Customizable main menu for English site
+    # You can remove the whole menu section if using content structure as a tree menu
+    main:
+      - name: Home
+        pageRef: /                       # Refers to the root index page
+        weight: 10
+        params: { icon: house }         # Optional icon for the menu item
+
+      - name: Get Started
+        pageRef: /get-started           # Points to the "Get Started" page
+        weight: 20
+        params: { icon: rocket-takeoff }
+
+      - name: Tutorial
+        pageRef: /tutorial              # Points to the tutorial section
+        weight: 30
+        params: { icon: tools }
+
+      - name: Blog
+        pageRef: /blog                  # Points to the blog index
+        weight: 40
+        params: { icon: paragraph }
+
+      - name: About
+        pageRef: /about                 # Points to the about page
+        weight: 50
+        params: { icon: person-circle }
+
+#===================
+# العربية
+#===================
+
+ar:
+  languageCode: ar                       # Language locale for Arabic
+  languageDirection: rtl                # Text direction is Right-to-Left (required for Arabic/Hebrew)
+  contentDir: content/ar                # Directory where Arabic content is stored
+  languageName: العربية                 # Display name of the language (in native script)
+  weight: 2                              # Used to sort languages in language switcher
+  timeZone: Asia/Riyadh                 # Time zone used for Arabic content
+
+  params:
+    # Language setting for Giscus comments
+    giscusLang: ar                      # Set to "ar" for Arabic Giscus interface
+
+  menus:
+    # Customizable main menu for Arabic site (in Arabic)
+    main:
+      - name: الرئيسية
+        pageRef: /
+        weight: 10
+        params: { icon: house }
+
+      - name: ابدأ هنا
+        pageRef: /get-started
+        weight: 20
+        params: { icon: rocket-takeoff }
+
+      - name: الدروس
+        pageRef: /tutorial
+        weight: 30
+        params: { icon: tools }
+
+      - name: المدونة
+        pageRef: /blog
+        weight: 40
+        params: { icon: paragraph }
+
+      - name: حول
+        pageRef: /about
+        weight: 50
+        params: { icon: person-circle }

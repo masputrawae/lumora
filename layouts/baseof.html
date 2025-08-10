@@ -1,0 +1,36 @@
+<!doctype html>
+<html
+  lang="{{- site.Language.LanguageCode -}}"
+  dir="{{- or site.Language.LanguageDirection `ltr` -}}"
+  data-theme=""
+>
+<head>
+  {{- partial "headed/meta" . -}}
+  {{- partial "headed/font" . -}}
+  {{- partialCached "headed/embed_script" . -}}
+  {{- partialCached "headed/js" . -}}
+  {{- partialCached "headed/sass" . -}}
+  {{- partialCached "headed/embed_css" . -}}
+</head>
+<body>
+
+<div class="layout">
+  {{ partial "layouts/header" . }}
+  {{ partial "layouts/sidebar_left" . }}
+
+  <main class="main">
+    <article class="markdown">
+      {{ block "main" . }}
+      {{ end }}
+    </article>
+  </main>
+  
+  {{ partial "layouts/sidebar_right" . }}
+  {{ partial "layouts/footer" . }}
+</div>
+
+<div class="overlay" id="overlay"></div>
+<div class="linkpreview" id="linkpreview"></div>
+
+</body>
+</html>

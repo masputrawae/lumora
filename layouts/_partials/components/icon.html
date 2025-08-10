@@ -1,0 +1,5 @@
+{{- $name := .name -}}
+{{- $class := or .class "" -}}
+<svg class="icon {{ $class }}" aria-hidden="true" focusable="false">
+  <use href="{{- "assets/icons.svg" | relURL -}}#icon-{{- $name -}}"></use>
+</svg>

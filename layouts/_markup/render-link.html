@@ -1,0 +1,75 @@
+{{ define "render-link-internal" }}
+  <a class="link link--internal" href="{{ .href | safeURL }}">
+    {{ .text }}
+    {{ partial "components/icon" (dict "name" "folder-symlink") }}
+  </a>
+{{ end }}
+
+{{ define "render-external-link" }}
+  <a
+    class="link link--external"
+    href="{{ .href | safeURL }}"
+    rel="external noopener noreferrer nofollow"
+    target="_blank"
+    {{- with .title }}title="{{ . }}"{{ end -}}
+  >
+    {{- with .text }}{{ . }}{{ end -}}
+    {{ partial "components/icon" (dict "name" "box-arrow-up-right") }}
+  </a>
+{{ end }}
+
+{{ define "render-broken" }}
+  <span class="link link--broken" title="{{ i18n "missingLink" }}">
+    {{ .text }}
+    {{ partial "components/icon" (dict "name" "x-circle") }}
+  </span>
+{{ end }}
+
+{{- $destination := .Destination | default "" -}}
+{{- $text := .Text | safeHTML | default "" -}}
+{{- $title := .Title | default "" -}}
+
+{{- $regularPages := where site.RegularPages "Lang" $.Page.Lang -}}
+
+{{- $isWikilink := eq $destination "wikilink" -}}
+{{- $isExternal := or
+  (strings.HasPrefix $destination "http://")
+  (strings.HasPrefix $destination "https://")
+  (strings.HasPrefix $destination "mailto:")
+-}}
+
+{{ if $isWikilink }}
+  {{/* Obsidian-style [[wikilink]] -> pakai strict logic */}}
+  {{ $rawTitle := cond (ne $title "") $title $text }}
+  {{ $parts := split $rawTitle "#" }}
+  {{ $targetRaw := index $parts 0 }}
+  {{ $target := path.Base $targetRaw }}
+  {{ $anchor := cond (gt (len $parts) 1) (printf "#%s" (index $parts 1)) "" }}
+
+  {{ $page := "" }}
+  {{ range $regularPages }}
+    {{ if and (ne .File nil) (or
+      (eq .File.BaseFileName $target)
+      (eq .File.TranslationBaseName $target)
+      (in .Aliases $target)
+      )
+    }}
+      {{ $page = . }}
+      {{ break }}
+    {{ end }}
+  {{ end }}
+  {{ if $page }}
+    {{ template "render-link-internal" (dict "href" (print $page.RelPermalink $anchor) "text" $text) }}
+  {{ else }}
+    {{ template "render-broken" (dict "text" $text) }}
+  {{ end }}
+{{ else if $isExternal }}
+  {{ template "render-external-link" (dict "href" $destination "text" $text "title" $title) }}
+{{ else }}
+  {{- $u := urls.Parse $destination -}}
+  {{ if $u.IsAbs }}
+    {{ template "render-external-link" (dict "href" $destination "text" $text "title" $title) }}
+  {{ else }}
+    {{ template "render-link-internal" (dict "href" $destination "text" $text) }}
+  {{ end }}
+{{ end }}

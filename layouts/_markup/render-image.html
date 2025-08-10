@@ -1,0 +1,31 @@
+{{ if eq .Destination `imageWikiLink` }}
+  {{ $titleText := `` }}
+  {{ $customWidth := replaceRE `.*\|(.*)` `$1` .PlainText }}
+  {{ if strings.Contains .PlainText .Title }}
+    {{ $customWidth = `` }}
+  {{ end }}
+  {{ if strings.Contains .PlainText `|` }}
+    {{ $titleText = replaceRE `(.*)\|.*` `$1` .PlainText }}
+    {{ $customWidth = replaceRE `.*\|(.*)` `$1` .PlainText }}
+  {{ end }}
+  {{ $imageSrc := .Title | safeURL }}
+  {{ if not (or (hasPrefix $imageSrc "/") (hasPrefix $imageSrc ".")) }}
+    {{ $base := .Page.File.Dir | strings.TrimPrefix "content" | strings.TrimPrefix "/" | strings.TrimSuffix "/" }}
+    {{ $imageSrc = print "/" $base "/" $imageSrc | urlize }}
+  {{ end }}
+  <img
+    src="{{ $imageSrc }}"
+    {{- with $titleText }}
+      alt="{{ . }}" title="{{ . }}"
+    {{ end -}}
+    {{- with $customWidth }}width="{{ . }}px"{{ end -}}
+  />
+{{ else }}
+  <img
+    src="{{ .Destination | safeURL }}"
+    {{- with .PlainText }}alt="{{ . }}"{{ end -}}
+    {{- with .Title }}
+      title="{{ . }}"
+    {{ end -}}
+  />
+{{ end }}

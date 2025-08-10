@@ -1,0 +1,17 @@
+{{- $filePath := .File.Path -}}
+{{- if hugo.IsMultilingual -}}
+  {{- $filePath = printf "%s/%s" .Lang $filePath -}}
+{{- end -}}
+
+
+<nav class="edit-page">
+  <a
+    href="https://github.com/{{- site.Params.ghrepo -}}/edit/{{- site.Params.branch -}}/content/{{- $filePath -}}?plain=1"
+    target="_blank"
+    rel="noopener noreferrer nofollow"
+    class="btn btn--primary"
+  >
+    {{- partial "components/icon" (dict "name" "pen") -}}
+    {{- T "editThisPage" -}}
+  </a>
+</nav>

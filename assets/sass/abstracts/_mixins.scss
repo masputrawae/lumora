@@ -1,0 +1,127 @@
+// =====================
+// FLEX UTILITIES
+// =====================
+@mixin flex-justify($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// =====================
+// FULL SCREEN UTILITY
+// =====================
+@mixin full-screen {
+  position: fixed;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+// =====================
+// TOKEN GENERATOR
+// =====================
+@mixin theme-vars($map) {
+  @each $key, $value in $map {
+    --#{$key}: #{$value};
+  }
+}
+
+// =====================
+// TRANSITION UTILITY
+// =====================
+@mixin transition($properties...) {
+  transition:  $properties, 0.3s ease-in-out;
+}
+
+// =====================
+// TEXT ELLIPSIS
+// =====================
+@mixin text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// =====================
+// WIDTH & HEIGHT
+// =====================
+@mixin width-height($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+// =====================
+// SIZE (SQUARE)
+// =====================
+@mixin size($size) {
+  @include width-height($size, $size);
+}
+
+// =====================
+// CIRCLE
+// =====================
+@mixin circle($size) {
+  @include size($size);
+  border-radius: 50%;
+}
+
+// =====================
+// BEFORE & AFTER UTILITY
+// =====================
+@mixin before-after($option, $content: "", $position: absolute) {
+  @if $option == "before" or $option == "after" {
+    &::#{$option} {
+      content: $content;
+      position: $position;
+      @content;
+    }
+  } @else {
+    @warn "before-after mixin only accepts 'before' or 'after'.";
+  }
+}
+
+// =====================
+// VISUALLY HIDDEN (A11Y)
+// =====================
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+// =====================
+// HOVER & FOCUS STATE
+// =====================
+@mixin hover-focus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+// =====================
+// SCROLL BAR CUSTOM
+// =====================
+@mixin custom-scrollbar($track, $thumb) {
+  scrollbar-width: thin;
+  scrollbar-color: $thumb $track;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumb;
+    border-radius: 4px;
+  }
+}

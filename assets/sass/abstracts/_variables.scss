@@ -1,0 +1,77 @@
+@use "sass:math";
+
+// =====================
+// BREAKPOINTS
+// =====================
+$breakpoints: (
+  sm: 36rem,
+  md: 48rem,
+  lg: 62rem,
+  xl: 75rem,
+  2xl: 87.5rem,
+);
+
+$container-max-widths: (
+  sm: 33.75rem,
+  md: 45rem,
+  lg: 60rem,
+  xl: 71.25rem,
+  2xl: 82.5,
+);
+
+$container-padding: calc(1.5rem * 0.5);
+
+// =====================
+// FONTS FAMILY
+// =====================
+$font-system: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"';
+$font-mono-system: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+
+$font-sans: "Noto Sans", sans-serif;
+$font-serif: "Noto Serif", serif;
+$font-mono: "Noto Sans Mono", monospace;
+
+/* 
+==========================================
+  TYPE SCALE FONT SIZE
+>------------------------------------<
+Common Types of Scale Ratios
+Some common ratios often used in design:
+- Minor Second (1.067)
+- Major Second (1.125)
+- Minor Third (1.200)
+- Major Third (1.250)
+- Perfect Fourth (1.333)
+- Augmented Fourth (1.414)
+- Perfect Fifth (1.500)
+- Golden Ratio (1.618)
+>------------------------------------<
+==========================================
+*/
+
+$fs-base: 14px;
+$scale-ratio: 1.067;
+
+@function scale($step) {
+  @return math.div(
+      math.div(math.round($fs-base * pow($scale-ratio, $step) * 100), 100),
+      $fs-base
+    ) *
+    1rem;
+}
+
+$fs-xs: scale(-4);
+$fs-2xs: scale(-3);
+$fs-3xs: scale(-2);
+$fs-sm: scale(-1);
+$fs-lg: scale(1);
+$fs-xl: scale(2);
+$fs-2xl: scale(3);
+$fs-3xl: scale(4);
+$fs-4xl: scale(5);
+$fs-5xl: scale(6);
+$fs-6xl: scale(7);
+$fs-7xl: scale(8);
+$fs-8xl: scale(9);
+$fs-9xl: scale(10);
+$fs-10xl: scale(11);

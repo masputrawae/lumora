@@ -1,0 +1,11 @@
+<style>
+  .highlight code::after {
+    content: "{{ T "copy" }}";
+  }
+
+  .highlight.copied code::after {
+    content: "{{ T "copied" }}";
+    color: var(--success);
+    cursor: copy;
+  }
+</style>

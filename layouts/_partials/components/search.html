@@ -1,0 +1,30 @@
+<dialog id="searchBar">
+  <div class="search-bar">
+    <div class="search-bar__form">
+      <label for="searchInput" class="sr-only">{{ T "search" }}</label>
+      <input
+        type="search"
+        name="query"
+        id="searchInput"
+        class="search-bar__input"
+        placeholder="{{ T "SearchThroughSiteContent" }}..."
+        aria-label="{{ T "SearchThroughSiteContent" }}"
+        autocomplete="off"
+        data-search-url="{{ "search.json" | relLangURL }}"
+      />
+      <button class="search-bar__btn-close" data-dialog="searchBar">
+        <span class="sr-only">{{ T "closeSearchBar" }}</span>
+        {{ partial "components/icon" (dict "name" "x" "class" "search-bar__btn-icon") }}
+      </button>
+    </div>
+
+    <ul
+      id="results"
+      class="results"
+      id="resultsPanel"
+      aria-live="polite"
+      data-translate="{{ dict "searchCurrentlyUnavailable" (T "searchCurrentlyUnavailable") "noResultsFoundFor" (T "noResultsFoundFor") | jsonify }}"
+      hidden
+    ></ul>
+  </div>
+</dialog>

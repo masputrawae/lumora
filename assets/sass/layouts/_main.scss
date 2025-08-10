@@ -1,0 +1,79 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+@use "../abstracts/breakpoints" as b;
+
+main {
+  padding-block: 5rem;
+  padding-inline: 1rem;
+  width: 100%;
+}
+
+.pager {
+  display: grid;
+  gap: 1rem;
+  border-block-start: 1px solid var(--base-border);
+  padding-block-start: 1rem;
+  margin-block-start: 0.5rem;
+
+  &__link {
+    display: block;
+    border: 1px solid var(--base-border);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    box-shadow: var(--base-shadow);
+    color: var(--second-color);
+    padding: 1rem;
+
+    &--prev {
+      text-align: start;
+    }
+
+    &--next {
+      text-align: end;
+    }
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__title {
+    font-size: v.$fs-4xl;
+    font-weight: 600;
+  }
+}
+
+// SEMENTARA DISINI
+.multi-column-list {
+  columns: 1;
+  width: 100%;
+
+  &__item {
+    margin-top: 0;
+  }
+
+  @include b.min(md) {
+    columns: 2;
+  }
+  @include b.min(xl) {
+    columns: 3;
+  }
+}
+
+.overlay {
+  @include m.full-screen;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 200;
+  display: none;
+
+  &--isActive {
+    display: block;
+  }
+}
+
+// EDIT PAGE
+.edit-page {
+  padding-block-start: 1rem;
+  margin-block-start: 0.5rem;
+}

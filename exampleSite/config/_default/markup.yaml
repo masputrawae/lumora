@@ -1,0 +1,73 @@
+#===================
+# MARKUP
+#===================
+
+# Note:
+# You usually don’t need to change anything here unless you understand Hugo markup configuration.
+# However, this file MUST exist at config/_default/markup.yaml to ensure proper rendering of markdown content.
+# For advanced usage, visit: https://gohugo.io/configuration/markup/#article
+
+goldmark:
+  renderHooks:
+    image:
+      enableDefault: true        # Use Hugo's default image rendering
+      useEmbedded: auto          # Automatically decide when to embed image HTML
+    link:
+      enableDefault: true        # Use Hugo's default link rendering
+      useEmbedded: auto          # Automatically decide when to embed link HTML
+
+  renderer:
+    unsafe: true                 # Allow raw HTML in markdown (required for things like <sup>, <kbd>, etc.)
+
+  extensions:
+    definitionList: true         # Enable definition lists (terms and definitions)
+    extras:
+      delete:
+        enable: true             # Enable ~~strikethrough~~ formatting
+      insert:
+        enable: true             # Enable inserted text (semantic `<ins>`)
+      mark:
+        enable: true             # Enable ==highlight== formatting
+      subscript:
+        enable: true             # Enable subscript text (e.g. H₂O)
+      superscript:
+        enable: true             # Enable superscript text (e.g. x²)
+
+    footnote: true               # Enable footnotes using [^1] syntax
+
+    passthrough:
+      delimiters:
+        block:
+          - - \[                # Allow block passthrough with custom delimiters like \[ \]
+            - \]
+          - - $$                # Allow LaTeX-style math blocks using $$ $$
+            - $$
+        inline:
+          - - \(                # Allow inline passthrough (e.g., for math: \( \))
+            - \)
+      enable: true              # Enable passthrough content (for math, shortcodes, or custom blocks)
+
+  parser:
+    wrapStandAloneImageWithinParagraph: true  # Wrap standalone images inside paragraphs (recommended)
+    attribute:
+      block: true               # Enable block-level attributes (e.g. `{: .class}` after a heading)
+      title: true               # Enable title attributes for elements like links and images
+
+# TABLE OF CONTENTS
+tableOfContents:
+  endLevel: 6                   # Maximum heading level to include in TOC (H6)
+  ordered: false                # Use unordered list for TOC
+  startLevel: 2                 # Start TOC from H2 (ignores H1)
+
+# HIGHLIGHT (for code blocks)
+highlight:
+  codeFences: true              # Enable fenced code blocks (```js)
+  guessSyntax: true             # Try to guess language if not specified
+  style: "github-dark"          # Syntax highlight theme (see available styles on Hugo docs)
+  noClasses: false              # Use CSS classes instead of inline styles (better for custom themes)
+  lineNumbersInTable: false     # Whether line numbers are rendered inside a table (false = inline)
+  lineNos: false                # Enable line numbers for code blocks
+  anchorLineNos: false          # Add anchor links to line numbers (for linking to specific lines)
+  lineAnchors: ""               # Add anchor ID prefix (optional)
+  lineNoStart: 1                # Line number starting point
+  tabWidth: 4                   # Width of tab characters in code

@@ -1,0 +1,57 @@
+<ul class="tree">
+  {{- template "tree_view" (dict "Page" .Site.Home "CurrentPage" . "Lang" .Site.Language.Lang) }}
+</ul>
+
+{{- define "tree_view" }}
+  {{- $page := .Page }}
+  {{- $current := .CurrentPage }}
+
+  {{- if and $page $page.Pages }}
+    {{- $sortedPages := ($page.Pages | sort).ByLinkTitle }}
+
+    <!-- Render Sections -->
+    {{- range $sortedPages }}
+      {{- if .IsSection }}
+        {{- $isActive := eq $current.RelPermalink .RelPermalink }}
+        {{- $hasActiveDescendant := $current.IsDescendant . }}
+        {{- $isOpen := or $isActive $hasActiveDescendant }}
+
+        <li class="tree__section">
+          <button 
+            class="tree__toggle" 
+            data-folder-target="id-{{ .RelPermalink | md5 }}"
+          >
+            {{ .LinkTitle }}
+            {{ if $isOpen }}
+              {{ partial "components/icon" (dict "name" "chevron-right" "class" "tree__icon-toggle tree__icon-toggle--isOpen") }}
+            {{ else }}
+              {{ partial "components/icon" (dict "name" "chevron-right" "class" "tree__icon-toggle") }}
+            {{ end }}
+          </button>
+
+          <ul id="id-{{ .RelPermalink | md5 }}" class="tree__list{{ if $isOpen }} tree__list--isOpen{{ end }}">
+            {{- template "tree_view" (dict "Page" . "CurrentPage" $current) }}
+          </ul>
+        </li>
+      {{- end }}
+    {{- end }}
+
+    <!-- Render Pages -->
+    {{- range $sortedPages }}
+      {{- if and .IsPage .File.BaseFileName }}
+        {{- $isActive := eq $current.RelPermalink .RelPermalink }}
+
+        <li class="tree__item">
+          <a 
+            class="tree__link{{ if $isActive }} tree__link--isActive{{ end }}"
+            href="{{ .RelPermalink }}"
+            {{ if $isActive }} aria-current="page"{{ end }}
+          >
+            {{ .LinkTitle | default .Params.id | default "No Title" }}
+          </a>
+        </li>
+      {{- end }}
+    {{- end }}
+
+  {{- end }}
+{{- end }}

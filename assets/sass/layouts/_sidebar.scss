@@ -1,0 +1,215 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.sidebar {
+  @include m.width-height(100%, 100dvh);
+  @include m.custom-scrollbar(var(--base-border), var(--primary));
+  @include m.transition(visibility, translate);
+  overflow-y: auto;
+  position: fixed;
+  inset-block-start: 4rem;
+  padding-inline: 1rem;
+  padding-block-end: 10rem;
+  visibility: hidden;
+  z-index: 50;
+
+  &--left {
+    inset-inline-start: 0;
+    background-color: var(--second-bg);
+    transform: translateX(-100%);
+    border-inline-end: 1px solid var(--base-border);
+  }
+
+  &--right {
+    inset-inline-end: 0;
+    background-color: var(--base-bg);
+    transform: translateX(100%);
+    border-inline-start: 1px solid var(--base-border);
+  }
+
+  &--isOpen {
+    transform: translateX(0%);
+    visibility: visible;
+  }
+}
+
+.menu {
+  padding: 0.5rem;
+  margin-block: 1rem;
+  background-color: var(--base-bg);
+  border-radius: 0.5rem;
+  border: 1px solid var(--base-border);
+  box-shadow: var(--base-shadow);
+
+  &__link {
+    @include m.flex-justify(start, center);
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    color: var(--second-color);
+    font-weight: 600;
+    font-size: v.$fs-xl;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+
+    &--isActive,
+    &:hover {
+      color: var(--cl-white);
+      background-color: var(--primary-bg);
+      border-color: var(--primary-border);
+    }
+
+    &--isAncestor {
+      background-color: var(--second-bg);
+      border-color: var(--second-border);
+    }
+  }
+
+  &__icon {
+    @include m.size(v.$fs-xl);
+  }
+}
+
+.tree {
+  margin-block-end: 2rem;
+  margin-block-start: 1rem;
+  padding-inline: 0.25rem;
+
+  &__toggle {
+    @include m.flex-justify(space-between, center);
+    width: 100%;
+    padding-block: 0.25rem;
+    font-weight: 600;
+    color: var(--second-color);
+  }
+
+  &__icon-toggle {
+    &--isOpen {
+      rotate: 90deg;
+    }
+  }
+
+  &__list {
+    padding-inline-start: 1.25rem;
+    margin-inline-start: 0.25rem;
+    border-left: 1px solid var(--base-border);
+
+    display: none;
+
+    &--isOpen {
+      display: block;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 0.25rem 0rem;
+    width: 100%;
+    color: var(--third-color);
+
+    &--isActive {
+      color: var(--second-color);
+    }
+
+    &:hover {
+      color: var(--second-color);
+    }
+  }
+}
+
+.widget {
+  &__title {
+    display: block;
+    padding-block-end: 0.25rem;
+    margin-block: 1rem;
+    color: var(--second-color);
+    font-weight: 600;
+    font-size: v.$fs-lg;
+    border-block-end: 1px dashed var(--base-border);
+  }
+}
+
+.terms {
+  &__list {
+    @include m.flex-justify(start, center);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__link {
+    @include m.flex-justify(center, center);
+    @include m.transition(transform);
+    color: var(--cl-white);
+    font-weight: 600;
+    background-color: var(--primary-bg);
+    padding: 0.25rem 0.5rem;
+    border-radius: 99999rem;
+    border: 1px solid var(--primary-border);
+    box-shadow: var(--base-shadow);
+
+    &:hover {
+      transform: translateY(-1px);
+    }
+  }
+}
+
+#TableOfContents {
+  ul ul {
+    padding-inline-start: 1.25rem;
+    margin-inline-start: 0.25rem;
+    border-inline-start: 1px solid var(--base-border);
+  }
+
+  a {
+    display: inline-block;
+    padding: 0.25rem 0rem;
+    color: var(--third-color);
+
+    &.isActive {
+      color: var(--primary);
+    }
+
+    &:hover {
+      color: var(--second-color);
+    }
+  }
+}
+
+.git-history {
+  &__list {
+    border-inline-start: 1px dashed var(--base-border);
+    padding-inline-start: 1.25rem;
+    margin-inline-start: 0.25rem;
+  }
+
+  &__link {
+    display: grid;
+    padding: 1rem;
+    background-color: var(--second-bg);
+    border-radius: 0.5rem;
+    border: 1px solid var(--base-border);
+    margin-block: 1.5rem;
+    position: relative;
+    box-shadow: var(--base-shadow);
+
+    &::before {
+      content: "";
+      @include m.circle(1rem);
+      position: absolute;
+      inset-inline-start: -1.85rem;
+      inset-block-start: 35%;
+      background-color: var(--cl-black);
+      border: 2px solid var(--primary);
+      box-shadow: var(--base-shadow);
+    }
+  }
+
+  &__date {
+    font-size: v.$fs-3xs;
+    color: var(--second-color);
+  }
+
+  &__subject {
+    font-size: v.$fs-sm;
+    color: var(--third-color);
+  }
+}
