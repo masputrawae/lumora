@@ -71,6 +71,7 @@ Lumora is built with and inspired by:
 * [Floating UI](https://floating-ui.com/)
 * [Giscus](https://giscus.app/)
 * [GitHub Pages](https://pages.github.com/)
+* [Bootstrap Icons](https://icons.getbootstrap.com/)
 * And God, for everything 🙌
 
 ---
