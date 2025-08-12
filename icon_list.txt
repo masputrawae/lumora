@@ -50,6 +50,8 @@ pause-circle
 translate
 pc-display
 moon-stars-fill
+tree
+wikipedia
 
 plus
 pencil
